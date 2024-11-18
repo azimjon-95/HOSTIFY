@@ -10,6 +10,7 @@ const Register = lazy(() => import("../pages/userDashboard/register/Register"));
 const Tariffs = lazy(() => import("../pages/userDashboard/components/Tariffs/Tariffs"));
 const PaymentForm = lazy(() => import("../pages/userDashboard/components/PaymentForm/PaymentForm"));
 const Profile = lazy(() => import("../pages/userDashboard/components/Profile/Profile"));
+const BannerVPS = lazy(() => import("../pages/bannerVps/BannerVPS"));
 
 
 // Define routes
@@ -23,6 +24,7 @@ const routes = [
   { path: "/userAuth/login", element: <Register />, protected: false },
   { path: "/userAuth/payment", element: <PaymentForm />, protected: true },
   { path: "/userAuth/profile", element: <Profile />, protected: true },
+  { path: "/case/:id", element: <BannerVPS />, protected: false },
 ];
 
 export default routes;

@@ -1,0 +1,75 @@
+.vpCcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d1117;
+    color: white;
+    text-align: center;
+    padding: 20px 40px;
+    height: 400px;
+    gap: 30px;
+}
+
+.vpCcontainer h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.vpCcontainer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.vpCcontainer p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.vpCcontainer button {
+    padding: 10px 20px;
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.vpCcontainer button:hover {
+    background-color: #024b9d;
+}
+
+.vpCcontainer-img {
+    width: 450px;
+    height: 300px;
+
+}
+
+.vpCcontainer-img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .vpCcontainer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .vpCcontainer h1 {
+        font-size: 2.5rem;
+    }
+
+    .vpCcontainer p {
+        font-size: 1.25rem;
+    }
+
+    .vpCcontainer img {
+        max-width: 400px;
+    }
+}

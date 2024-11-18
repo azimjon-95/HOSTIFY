@@ -1,8 +1,7 @@
 import React from "react";
-import { Menu, Popover } from "antd";
+import { Popover } from "antd";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import parij from "../../assets/navbar/image.png";
 import logo from "../../assets/navbar/logo.png";
 import "./style.css";
 import { Link } from "react-router-dom";
@@ -48,10 +47,10 @@ const Navbar = () => {
 
     const tarif = (
         <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <Link to="#">{t.standardVPS}</Link>
-            <Link to="#">{t.windowsVPS}</Link>
-            <Link to="#">{t.memoryVPS}</Link>
-            <Link to="#">{t.hiCPUVPS}</Link>
+            <Link to="/case/standard">{t.standardVPS}</Link>
+            <Link to="/case/memory">{t.windowsVPS}</Link>
+            <Link to="/case/hi-cpu">{t.memoryVPS}</Link>
+            <Link to="/case/windows">{t.hiCPUVPS}</Link>
         </div>
     );
 
@@ -62,6 +61,14 @@ const Navbar = () => {
             <Link to="#">{t.legalInfo}</Link>
         </div>
     );
+
+    const handleRegisterClick = () => {
+        window.scrollTo({
+            top: window.pageYOffset + 2380,  // Scroll down 600px from the current position
+            behavior: "smooth", // Smooth scroll effect
+        });
+    };
+
 
     return (
         <div className="navbar">
@@ -85,10 +92,13 @@ const Navbar = () => {
                 <Link to="/userAuth">
                     <button className="navbar-auth-btn">{t.login}</button>
                 </Link>
-                <button className="navbar-auth-btn">{t.register}</button>
+                <button className="navbar-auth-btn" onClick={handleRegisterClick}>{t.register}</button>
             </div>
         </div>
     );
 };
 
 export default Navbar;
+
+
+
