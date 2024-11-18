@@ -1,0 +1,175 @@
+/* Balance.css */
+.balance-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.balance-header h1 {
+    font: 28px / 28px Manrope, Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.646);
+    letter-spacing: normal;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.balance-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    height: 80px;
+    border: 1px solid #ddd;
+
+}
+
+.current-balance {
+    font-size: 1.2rem;
+    color: rgb(78, 82, 89);
+}
+
+.current-cash {
+    font-size: 1.2rem;
+    color: rgb(78, 82, 89);
+    width: 35%;
+}
+
+.highlight {
+    text-align: end;
+}
+
+.percentage {
+    text-align: center;
+}
+
+.wallet-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.bonus-section {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px 20px 10px 20px;
+
+}
+
+.bonus-section h2 {
+    font: 300 20px / 30px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    color: rgb(78, 82, 89);
+    letter-spacing: normal;
+    background-color: rgb(255, 255, 255);
+}
+
+.cash-box {
+    width: 40%;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.bonus-section-ur {
+    font: 400 18px / 25px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    color: rgb(78, 82, 89);
+    letter-spacing: normal;
+    background-color: rgb(255, 255, 255);
+}
+
+.bonus-note {
+    font-size: 0.9rem;
+    width: 40%;
+    color: rgb(78, 82, 89);
+    font: 400 14px / 20px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    background-color: rgb(255, 255, 255);
+}
+
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.language-switch button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+.payment-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.payments-table th,
+.payments-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.payments-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.payments-table td {
+    font-size: 1rem;
+}
+
+.payments-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .balance-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bonus-table th,
+    .bonus-table td {
+        font-size: 0.9rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+}

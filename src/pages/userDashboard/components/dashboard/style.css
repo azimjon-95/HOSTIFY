@@ -1,0 +1,171 @@
+/* App.css */
+.server-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.slider-container .card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 16px;
+    color: rgb(0, 127, 255);
+    text-decoration-color: rgb(0, 127, 255);
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    cursor: pointer;
+    list-style: outside none none;
+    font: 400 14px / 20px Manrope, Roboto, sans-serif;
+    letter-spacing: normal;
+    padding: 0 10px;
+    border-radius: 6px;
+    background: none 0% 0% / auto repeat scroll padding-box border-box #e9f1ff;
+}
+
+.slider-container .card.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.my-servers-box {
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    margin: 10px 0;
+    padding: 10px;
+
+}
+
+.slider-container .card.exit {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.slider-container .card:hover {
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .slider-container .card {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider-container .card {
+        font-size: 16px;
+    }
+}
+
+.server-container>h2 {
+    font: 26px / 28px Manrope, Roboto, sans-serif;
+    color: #000000c1;
+    letter-spacing: normal;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    margin-top: 20px;
+}
+
+.server-card {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+.server-slide {
+    width: 100%;
+}
+
+.server-flag {
+    font-size: 32px;
+}
+
+.server-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.server-info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.create-server-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff27;
+    color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.No-data-myServer>h2 {
+    font: 24px / 20px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    margin-bottom: 20px;
+    color: rgb(78, 82, 89);
+    letter-spacing: normal;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.No-data-myServer>p {
+    font: 17px / 20px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    margin-bottom: 20px;
+    color: rgb(78, 82, 89);
+    letter-spacing: normal;
+
+    background-color: rgb(255, 255, 255);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .server-card {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .create-server-btn {
+        width: 100%;
+    }
+}

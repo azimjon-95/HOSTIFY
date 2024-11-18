@@ -1,0 +1,56 @@
+.user-navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    height: 50px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.user-nav-main {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logoImage {
+    height: 40px;
+    width: 40px;
+}
+
+.logoText {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.my-balans {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.my-balans button {
+    background-color: transparent;
+    border: none;
+    margin: 0 10px;
+    font-size: 16px;
+    color: #5c5c5c;
+    cursor: pointer;
+}
+
+.AccountBalanceWallet {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.AccountBalanceWallet:hover {
+    background: #26262613;
+}

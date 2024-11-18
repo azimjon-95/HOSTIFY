@@ -1,0 +1,183 @@
+/* Footer asosiy bo'lim */
+.footer {
+  width: 100%;
+  background-color: rgb(3, 16, 59);
+  color: #cfcfd9;
+  padding: 30px;
+  font-family: "Arial", sans-serif;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 105%;
+  height: 100px;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 0;
+  left: -2.5%;
+  right: 0;
+  background: #fff;
+
+}
+
+.footer-logo {
+  text-align: left;
+}
+
+.logo-img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.telegram-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.telegram-icon>svg {
+  width: 103%;
+  height: 103%;
+  color: #0088ff;
+  margin: 0;
+  margin-top: -.3px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  margin-top: 15px;
+}
+
+.footer-icons a {
+  text-decoration: none;
+  color: #cfcfd9;
+  font-size: 18px;
+}
+
+
+.footer-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  text-align: left;
+  flex: 1;
+}
+
+.column h4 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.column ul li a {
+  text-decoration: none;
+  color: #cfcfd9;
+  transition: color 0.3s ease;
+}
+
+.column ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Moslashuvchan dizayn: Media querylar */
+
+/* Tablet va kichik ekranlar uchun (768px dan kichik) */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .footer-icons {
+    justify-content: flex-start;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .column {
+    flex: none;
+    width: 100%;
+  }
+
+  .column h4 {
+    font-size: 14px;
+  }
+
+  .column ul li {
+    font-size: 13px;
+  }
+}
+
+/* Mobil ekranlar uchun (480px dan kichik) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 0px 20px;
+    height: 100%;
+  }
+
+  .footer-logo p {
+    font-size: 12px;
+  }
+
+  .footer-icons a {
+    font-size: 16px;
+  }
+
+  .footer-links {
+    gap: 15px;
+    margin-top: 130px;
+  }
+
+  .column ul li {
+    font-size: 12px;
+  }
+
+  .column ul li a {
+    font-size: 12px;
+  }
+
+
+}

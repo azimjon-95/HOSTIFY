@@ -1,0 +1,65 @@
+.layout-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.layout-content {
+    display: flex;
+    flex: 1;
+}
+
+.logoSection {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    gap: 5px;
+}
+
+.logomenus {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    border-radius: 8px;
+    background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0.04);
+
+}
+
+.logomenus>a {
+    box-sizing: border-box;
+    position: relative;
+    text-decoration: none solid rgb(0, 0, 0);
+    border-radius: 8px;
+    display: flex;
+    height: 30px;
+    width: 100%;
+    padding-left: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    visibility: visible;
+    letter-spacing: normal;
+
+    font: 14px / 30px Manrope, Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.438);
+    cursor: pointer;
+}
+
+.logomenus>a:hover {
+    background: none 0% 0% / auto repeat scroll padding-box border-box rgba(47, 47, 47, 0.04);
+}
+
+.layout-content main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.layout-authContainer {
+    width: 100%;
+}
