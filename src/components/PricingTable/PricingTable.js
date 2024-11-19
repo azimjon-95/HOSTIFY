@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import frs from '../../assets/frs.png'
 import our_1 from '../../assets/banner/bullet-icon1.svg'
 import our_2 from '../../assets/banner/bullet-icon2.svg'
@@ -75,9 +75,41 @@ const translations = {
         privacy_policy: "Политика конфиденциальности",
     },
 };
+const register = {
+    en: {
+        quick_register: "Quick Registration",
+        email_placeholder: "Enter your email",
+        confirmation_code_placeholder: "Enter confirmation code",
+        sign_up: "Sign Up",
+        verify: "Verify",
+        user_agreement: "By signing up, you agree to the",
+        privacy_policy: "Privacy Policy",
+        code_sent: "Confirmation code sent! Check your email.",
+        enter_email: "Please enter your email address.",
+        code_verified: "Email successfully verified!",
+        code_invalid: "Invalid confirmation code!",
+        resend_available: "You can resend the code in",
+        resend: "Resend Code",
+    },
+    ru: {
+        quick_register: "Быстрая регистрация",
+        email_placeholder: "Введите ваш email",
+        confirmation_code_placeholder: "Введите код подтверждения",
+        sign_up: "Зарегистрироваться",
+        verify: "Подтвердить",
+        user_agreement: "Регистрируясь, вы соглашаетесь с",
+        privacy_policy: "Политикой конфиденциальности",
+        code_sent: "Код подтверждения отправлен! Проверьте вашу почту.",
+        enter_email: "Пожалуйста, введите ваш email.",
+        code_verified: "Email успешно подтвержден!",
+        code_invalid: "Неверный код подтверждения!",
+        resend_available: "Вы можете отправить код повторно через",
+        resend: "Отправить код повторно",
+    },
+};
 
 
-const Slider = () => {
+export const PricingTable = () => {
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
     const texts = translations[currentLanguage];
     const plans = [
@@ -114,10 +146,13 @@ const Slider = () => {
     const [data, setData] = useState(plans); // Default data
     const [activeButton, setActiveButton] = useState("Standard"); // Default active button
 
+
     const [email, setEmail] = useState("");
     const [confirmationCode, setConfirmationCode] = useState("");
     const [isCodeSent, setIsCodeSent] = useState(false);
     const [message, setMessage] = useState("");
+    const [countdown, setCountdown] = useState(30);
+    const [canResend, setCanResend] = useState(false);
 
 
     const advantages = [
@@ -246,23 +281,46 @@ const Slider = () => {
     };
 
 
+
+    const t = register[currentLanguage]; // Tanlangan til matnini olish
+
     const handleSignUp = () => {
         if (email) {
-            // Tasdiqlash kodi yuborish
             setIsCodeSent(true);
-            setMessage("Tasdiqlash kodi yuborildi! Emailingizni tekshiring.");
+            setMessage(t.code_sent);
+            setCountdown(30);
+            setCanResend(false);
         } else {
-            setMessage("Email manzilini kiriting.");
+            setMessage(t.enter_email);
         }
+    };
+
+    const handleResendCode = () => {
+        if (!canResend) return;
+        handleSignUp();
     };
 
     const handleVerifyCode = () => {
         if (confirmationCode === "123456") {
-            setMessage("Email muvaffaqiyatli tasdiqlandi!");
+            setMessage(t.code_verified);
         } else {
-            setMessage("Tasdiqlash kodi noto'g'ri!");
+            setMessage(t.code_invalid);
         }
     };
+
+    useEffect(() => {
+        if (isCodeSent && countdown > 0) {
+            const timer = setInterval(() => {
+                setCountdown((prev) => prev - 1);
+            }, 1000);
+            return () => clearInterval(timer);
+        } else if (countdown === 0) {
+            setCanResend(true);
+        }
+    }, [isCodeSent, countdown]);
+
+
+
     return (
 
 
@@ -380,7 +438,7 @@ const Slider = () => {
                 </div>
             </div>
             <h1>{texts.quick_register}</h1>
-            <div className="signup-container">
+            {/* <div className="signup-container">
                 <div className="hello-text">
                     <img src={hello_reg} alt="" />
                 </div>
@@ -412,11 +470,57 @@ const Slider = () => {
                         {texts.user_agreement} <a href="#">{texts.privacy_policy}</a>
                     </p>
                 </div>
+            </div> */}
+
+            <div className="signup-container">
+                {/* <div className="language-switcher">
+                    <button onClick={() => setLang("en")}>English</button>
+                    <button onClick={() => setLang("ru")}>Русский</button>
+                </div> */}
+                <div className="hello-text">
+                    <img src={hello_reg} alt="" />
+                </div>
+                <div className="signup-form">
+                    <h2>{t.quick_register}</h2>
+                    {!isCodeSent ? (
+                        <>
+                            <input
+                                type="email"
+                                placeholder={t.email_placeholder}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button onClick={handleSignUp}>{t.sign_up}</button>
+                        </>
+                    ) : (
+                        <>
+                            <input
+                                type="text"
+                                placeholder={t.confirmation_code_placeholder}
+                                value={confirmationCode}
+                                onChange={(e) => setConfirmationCode(e.target.value)}
+                            />
+                            <button onClick={handleVerifyCode}>{t.verify}</button>
+                            <div>
+                                {countdown > 0 ? (
+                                    <p>
+                                        {t.resend_available} {countdown} seconds.
+                                    </p>
+                                ) : (
+                                    <button style={{ marginTop: "10px" }} onClick={handleResendCode} disabled={!canResend}>
+                                        {t.resend}
+                                    </button>
+                                )}
+                            </div>
+                        </>
+                    )}
+                    <p className="message">{message}</p>
+                    <p>
+                        {t.user_agreement} <a href="#">{t.privacy_policy}</a>
+                    </p>
+                </div>
             </div>
-        </div>
+        </div >
 
     );
 };
-
-export default Slider;
-

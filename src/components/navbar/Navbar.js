@@ -7,41 +7,41 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "../LanguageSwitcher";
 
+const translations = {
+    ru: {
+        locations: "Локации",
+        france: "Франции",
+        tariffs: "Тарифы",
+        info: "Информация",
+        standardVPS: "Стандартные VPS/VDS",
+        windowsVPS: "Windows VPS/VDS",
+        memoryVPS: "Memory VPS/VDS",
+        hiCPUVPS: "Hi-CPU VPS/VDS",
+        dataCenters: "Датацентры",
+        contacts: "Контакты",
+        legalInfo: "Юридическая информация",
+        login: "Войти",
+        register: "Регистрация",
+    },
+    en: {
+        locations: "Locations",
+        france: "France",
+        tariffs: "Tariffs",
+        info: "Information",
+        standardVPS: "Standard VPS/VDS",
+        windowsVPS: "Windows VPS/VDS",
+        memoryVPS: "Memory VPS/VDS",
+        hiCPUVPS: "Hi-CPU VPS/VDS",
+        dataCenters: "Data Centers",
+        contacts: "Contacts",
+        legalInfo: "Legal Information",
+        login: "Login",
+        register: "Register",
+    },
+};
+
 const Navbar = () => {
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
-
-    const translations = {
-        ru: {
-            locations: "Локации",
-            france: "Франции",
-            tariffs: "Тарифы",
-            info: "Информация",
-            standardVPS: "Стандартные VPS/VDS",
-            windowsVPS: "Windows VPS/VDS",
-            memoryVPS: "Memory VPS/VDS",
-            hiCPUVPS: "Hi-CPU VPS/VDS",
-            dataCenters: "Датацентры",
-            contacts: "Контакты",
-            legalInfo: "Юридическая информация",
-            login: "Войти",
-            register: "Регистрация",
-        },
-        en: {
-            locations: "Locations",
-            france: "France",
-            tariffs: "Tariffs",
-            info: "Information",
-            standardVPS: "Standard VPS/VDS",
-            windowsVPS: "Windows VPS/VDS",
-            memoryVPS: "Memory VPS/VDS",
-            hiCPUVPS: "Hi-CPU VPS/VDS",
-            dataCenters: "Data Centers",
-            contacts: "Contacts",
-            legalInfo: "Legal Information",
-            login: "Login",
-            register: "Register",
-        },
-    };
 
     const t = translations[currentLanguage] || translations.en;
 
@@ -62,13 +62,20 @@ const Navbar = () => {
         </div>
     );
 
-    const handleRegisterClick = () => {
-        window.scrollTo({
-            top: window.pageYOffset + 2380,  // Scroll down 600px from the current position
-            behavior: "smooth", // Smooth scroll effect
-        });
-    };
 
+
+    const handleRegisterClick = () => {
+        if (window.location.pathname !== "/") {
+            // Sahifani qayta yuklash orqali '/' ga o'tadi
+            window.location.assign("/");
+        } else {
+            // Sahifa hozirda '/' bo'lsa, silliq scroll qiladi
+            window.scrollTo({
+                top: window.pageYOffset + 2380,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
         <div className="navbar">

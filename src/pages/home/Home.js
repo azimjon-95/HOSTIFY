@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import Banner from '../../components/banner/Banner';
-import PricingTable from '../../components/PricingTable/PricingTable';
+import { PricingTable } from '../../components/PricingTable/PricingTable';
 
 const Home = () => {
     return (
