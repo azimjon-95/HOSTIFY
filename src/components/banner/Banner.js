@@ -6,12 +6,14 @@ import startup from '../../assets/banner/startup.png';
 import { useSelector } from "react-redux";
 
 import './style.css';
+import { Link } from 'react-scroll';
 
 const Banner = () => {
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
 
     const translations = {
         ru: {
+            mainTitle: "Рассчитайте стоимость",
             title: "Надёжные серверы на базе KVM с мгновенной установкой",
             subtitle: "Высокая производительность по низкой цене!",
             button: "Смотреть тарифы",
@@ -31,6 +33,7 @@ const Banner = () => {
             ]
         },
         en: {
+            mainTitle: "Calculate the cost",
             title: "Reliable KVM-based servers with instant setup",
             subtitle: "High performance at a low price!",
             button: "View Plans",
@@ -53,15 +56,6 @@ const Banner = () => {
 
     const lang = translations[currentLanguage] || translations.ru;
 
-
-    const handleRegisterClick = () => {
-        window.scrollTo({
-            top: window.pageYOffset + 810,  // Scroll down 600px from the current position
-            behavior: "smooth", // Smooth scroll effect
-        });
-    };
-
-
     return (
         <div className="main-banner">
             <div className="continer-banner">
@@ -69,7 +63,14 @@ const Banner = () => {
                     <h1>{lang.title}</h1>
                     <h2>{lang.subtitle}</h2>
 
-                    <button onClick={handleRegisterClick}>{lang.button}</button>
+                    <div className="banner-btns">
+                        <Link to="pricing-table" smooth={true} duration={500}>
+                            <button >{lang.button}</button>
+                        </Link>
+                        <Link to="cloud-gpu" smooth={true} duration={500}>
+                            <button >{lang.mainTitle}</button>
+                        </Link>
+                    </div>
                 </div>
                 <div className="banner-right">
                     <img src={banner} alt="" />

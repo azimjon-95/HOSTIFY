@@ -100,59 +100,11 @@
 
 .socialButtons {
     display: flex;
-    gap: 15px;
     flex-direction: column;
     width: 100%;
     max-width: 400px;
 }
 
-.socialButton {
-    box-sizing: border-box;
-    font: 500 14px / 36px Manrope, Roboto, sans-serif;
-    position: relative;
-    background-color: rgb(70, 128, 194);
-    color: rgb(255, 255, 255);
-    text-decoration: none solid rgb(255, 255, 255);
-    width: 100%;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    min-width: 64px;
-    outline: rgb(255, 255, 255) none 0px;
-    overflow: visible;
-    height: 35px;
-    text-align: center;
-    white-space: nowrap;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: normal;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.socialButton-git {
-    box-sizing: border-box;
-    font: 500 14px / 36px Manrope, Roboto, sans-serif;
-    position: relative;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    text-decoration: none solid rgb(255, 255, 255);
-    width: 100%;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    min-width: 64px;
-    outline: rgb(255, 255, 255) none 0px;
-    overflow: visible;
-    height: 35px;
-    text-align: center;
-    white-space: nowrap;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: normal;
-    display: flex;
-}
 
 /* MEDIA QUERIES */
 @media (max-width: 1024px) {

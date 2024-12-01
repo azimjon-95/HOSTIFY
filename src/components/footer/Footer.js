@@ -7,9 +7,9 @@ import "./style.css";
 
 const Footer = () => {
   const currentLanguage = useSelector((state) => state.language.currentLanguage);
-
   const translations = {
     ru: {
+      title: "Рассчитайте стоимость",
       description: "Хостинг-провайдер с 2024 года",
       services: "Услуги",
       standardVPS: "Стандартные VPS/VDS",
@@ -25,6 +25,7 @@ const Footer = () => {
       contacts: "Контакты",
     },
     en: {
+      title: "Calculate the cost",
       description: "Hosting provider since 2024",
       services: "Services",
       standardVPS: "Standard VPS/VDS",
@@ -43,13 +44,27 @@ const Footer = () => {
 
   const t = translations[currentLanguage] || translations.en;
 
+  const handleRegisterClick = () => {
+    window.scrollTo({
+      top: window.scrollX + 0,
+      behavior: "smooth",
+    });
+  };
+
+
+  const handleRegister = () => {
+    window.scrollTo({
+      top: window.scrollX + 2850,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="footer">
       <div className="footer-links">
         <div className="column">
           <img
             src="/path-to-your-logo.png"
-            alt="HIP-HOSTING Logo"
+            alt="HOSTIFY Logo"
             className="logo-img"
           />
           <p>{t.description}</p>
@@ -63,17 +78,17 @@ const Footer = () => {
         <div className="column">
           <h4>{t.services}</h4>
           <ul>
-            <li>
-              <Link to="#standard-vps">{t.standardVPS}</Link>
+            <li onClick={handleRegisterClick}>
+              <Link to="/case/standard">{t.standardVPS}</Link>
             </li>
-            <li>
-              <Link to="#windows-vps">{t.windowsVPS}</Link>
+            <li onClick={handleRegisterClick}>
+              <Link to="/case/memory">{t.windowsVPS}</Link>
             </li>
-            <li>
-              <Link to="#memory-vps">{t.memoryVPS}</Link>
+            <li onClick={handleRegisterClick}>
+              <Link to="/case/hi-cpu">{t.memoryVPS}</Link>
             </li>
-            <li>
-              <Link to="#hi-cpu-vps">{t.hiCPUVPS}</Link>
+            <li onClick={handleRegisterClick}>
+              <Link to="/case/windows">{t.hiCPUVPS}</Link>
             </li>
           </ul>
         </div>
@@ -81,16 +96,19 @@ const Footer = () => {
           <h4>{t.profile}</h4>
           <ul>
             <li>
-              <Link to="#cabinet">{t.personalCabinet}</Link>
+              <Link onClick={handleRegisterClick} to="/userAuth">{t.personalCabinet}</Link>
             </li>
             <li>
-              <Link to="#registration">{t.registration}</Link>
+              <Link onClick={handleRegister} to="#registration">{t.registration}</Link>
             </li>
           </ul>
         </div>
         <div className="column">
           <h4>{t.additional}</h4>
           <ul>
+            <li>
+              <Link to="#user-agreement">{t.title}</Link>
+            </li>
             <li>
               <Link to="#user-agreement">{t.userAgreement}</Link>
             </li>

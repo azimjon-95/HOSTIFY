@@ -1,0 +1,427 @@
+/* Umumiy container */
+.container-config {
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+
+.config {
+    width: 100%;
+}
+
+.config-box {
+    display: flex;
+    gap: 15px;
+}
+
+.container-config label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 15px;
+    color: #555;
+}
+
+.container-config input,
+.container-config select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.config p {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #444;
+}
+
+.container-config button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Add_disk {
+    color: #007bff !important;
+    background: transparent !important;
+    text-align: left !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+}
+
+.container-config>button:hover {
+    background-color: #0056b3;
+}
+
+.disk-row {
+    width: 100%;
+    display: flex;
+    align-items: center !important;
+    gap: 10px;
+}
+
+.disk-row label {
+    text-align: start;
+}
+
+.container-config .disk-row input,
+.container-config .disk-row select {
+    flex: 1;
+    text-align: start !important;
+    text-wrap: nowrap !important;
+}
+
+/* Umumiy hisob bo'limi */
+.container-config .config div:last-child {
+    grid-column: span 2;
+    /* Ikki ustunni qamrab oladi */
+    text-align: center;
+}
+
+.container-config .config div:last-child h2 {
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.container-config .config div:last-child p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.button-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    background: #F1F4FE;
+    padding: 5px 10px;
+    margin-top: 3px;
+}
+
+.button-group button {
+    padding: 7.5px 12px;
+    flex: 1 !important;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+    text-wrap: nowrap;
+
+}
+
+
+/* Tanlangan tugma */
+.button-group button.active {
+    background-color: #ffffff !important;
+}
+
+.hisoboti-box {
+    width: 400px;
+    background: #F1F4FE;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hisoboti-box>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hisoboti-box>div>h2 {
+    display: flex;
+    align-items: center;
+}
+
+.hisoboti-box>div>h2>svg {
+    margin-left: 9px;
+    font-size: 20px;
+    margin-top: 2px;
+    cursor: help;
+}
+
+.CPU-Tarif {
+    margin-top: 10px;
+}
+
+.CPU-va-RAM {
+    display: flex;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.CPU-va-RAM>span>label {
+    display: flex;
+    align-items: center;
+}
+
+.CPU-va-RAM>span>label>svg {
+    margin-left: 4px;
+}
+
+
+.CPU-va-RAM>span {
+    display: inline-block;
+    align-items: center;
+    text-wrap: nowrap;
+    width: 100%;
+}
+
+.CPU-va-RAM>span>button {
+    padding: 12px 12px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #F1F4FE;
+    color: #444;
+
+}
+
+
+.counter-container {
+    width: 190px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counter-value {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    width: 50px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 400 !important;
+}
+
+.counter-btn {
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-weight: 400 !important;
+    color: #007bff !important;
+    background: transparent !important;
+}
+
+.counter-btn:hover {
+    opacity: 0.8;
+}
+
+.removeDisk {
+    background: transparent !important;
+    color: red !important;
+    margin-top: 12px !important;
+}
+
+.cpu-result span p {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.cpu-result span p>svg {
+    margin-left: 3px;
+    cursor: help;
+}
+
+
+.cpu-result span h2 {
+    color: #0033CC !important;
+    display: flex;
+    align-items: center;
+}
+
+.cpu-result span h2>svg {
+    margin-left: 5px;
+    color: gold;
+
+}
+
+.cpu-result>button {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #0033CC !important;
+}
+
+
+
+
+
+
+.ant-tooltip-inner {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    box-shadow: 0 2px 8px #00000050 !important;
+}
+
+
+.ant-tooltip-arrow {
+    border-color: #ffffff !important;
+    border-width: 8px !important;
+    color: #333333 !important;
+}
+
+
+.ant-tooltip-arrow::before {
+    border-color: #ffffff !important;
+    border-width: 8px !important;
+    background-color: #fff !important;
+    color: #333333 !important;
+}
+
+
+:hover .ant-tooltip-inner {
+    background-color: #fff !important;
+    color: #333333 !important;
+    border-color: #ffffff00 !important;
+}
+
+
+:hover .ant-tooltip-arrow {
+    border-color: #fff !important;
+}
+
+
+.ant-tooltip-inner {
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+
+.ant-tooltip-inner {
+    transform: scale(1) !important;
+}
+
+
+.ant-tooltip-open .ant-tooltip-inner {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+
+.ant-tooltip-hidden .ant-tooltip-inner {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+}
+
+
+
+
+/* media */
+@media (max-width: 600px) {
+    .config-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hisoboti-box {
+        width: 100%;
+        background: #F1F4FE;
+        border-radius: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container-config {
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    }
+
+    .button-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 6px;
+        background: #F1F4FE;
+        padding: 5px 10px;
+        margin-top: 3px;
+    }
+
+    .CPU-va-RAM {
+        display: flex;
+        margin-top: 20px;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .disk-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        gap: 10px;
+    }
+
+    .disk-row label {
+        width: 100%;
+    }
+
+    .counter-container {
+        width: 100%;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .button-group button {
+        padding: 7.5px 12px;
+        width: 100%;
+        flex: 1 !important;
+        font-size: 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: #333;
+        text-wrap: nowrap;
+
+    }
+
+}

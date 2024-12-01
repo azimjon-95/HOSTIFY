@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLanguage } from "../context/languageSlice";
 import Translate from "../assets/navbar/translate.png";
+import { GrLanguage } from "react-icons/gr";
 import '../index.css'
 import { Popover } from "antd";
 
@@ -39,6 +40,9 @@ const LanguageSwitcher = () => {
                 src={Translate}
                 alt="Translate"
             />
+
+
+            {/* <GrLanguage style={{ fontSize: "25px", color: "#fff" }} /> */}
         </Popover>
     );
 };

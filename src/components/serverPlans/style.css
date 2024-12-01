@@ -1,0 +1,221 @@
+/* ------------------------- */
+.advantages-container {
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: 36px;
+    margin-top: 40px;
+    outline: rgb(0, 12, 53) none 0px;
+    box-sizing: border-box;
+    font-weight: 550;
+    color: rgb(0, 12, 53);
+    line-height: 52.8px;
+    text-align: center;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    background: none 0% 0% / auto repeat scroll padding-box border-box rgb(241, 244, 254);
+}
+
+.advantages-title {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.advantages-card {
+    /* background-color: #fff; */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.advantages-card:hover {
+    transform: scale(1.05);
+}
+
+.advantages-icon {
+    font-size: 2.5rem;
+    color: #0078D7;
+    margin-bottom: 1rem;
+}
+
+.advantages-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.advantages-description {
+    font-size: 17px;
+    outline: rgb(75, 83, 108) none 0px;
+    box-sizing: border-box;
+    color: rgb(75, 83, 108);
+    font-weight: 300;
+    line-height: 25.2px;
+    text-align: center;
+    list-style: outside none none;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    background: none 0% 0% / auto repeat scroll padding-box border-box rgb(241, 244, 254);
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.poplar_systems {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.poplar_systems_box {
+    height: 80px;
+    width: 80px;
+    border-right: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.poplar_systems_box img {
+    width: 100%;
+    height: 100%;
+}
+
+.payment-methods {
+    width: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgb(3, 16, 59);
+    gap: 10px;
+    padding: 5px;
+    margin: 15px auto;
+    border-radius: 6px;
+
+}
+
+.payment-methods-grid {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 50%;
+}
+
+.payment-methods-grid img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+    }
+
+    .signup-image {
+        margin-bottom: 20px;
+    }
+
+    .signup-form {
+        width: 100%;
+    }
+
+    .blue-box {
+        display: none;
+    }
+
+    .cards-wrapper {
+        width: 100%;
+        background: #0033CC;
+    }
+
+    .card>p {
+        color: #fff;
+    }
+
+
+    .next-prive-box {
+        position: absolute;
+        width: 100%;
+        top: 46%;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .next-prive-box button {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #fff;
+        border: none;
+        background: #0033cc;
+        cursor: pointer;
+    }
+
+    .next-prive-box button.disabled {
+        cursor: none;
+        ;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .payment-methods {
+        width: 99%;
+
+    }
+
+    .payment-methods h1 {
+        font-size: 22px;
+    }
+
+    .payment-methods-grid {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 50%;
+    }
+
+    .payment-methods-grid img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
