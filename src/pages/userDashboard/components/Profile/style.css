@@ -212,3 +212,26 @@
 .switch-unchecked {
     background-color: #515151 !important;
 }
+
+
+/* media */
+@media (max-width: 600px) {
+    .form-container {
+        width: 100%;
+    }
+
+    .profile-container {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .profile-content {
+        padding: 10px;
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        border: .5px solid #e1e1e1;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    }
+}

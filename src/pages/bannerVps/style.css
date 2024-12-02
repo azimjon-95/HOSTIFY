@@ -26,9 +26,10 @@
 .vpCcontainer p {
     font-size: 1rem;
     margin: 10px 0;
+    max-width: 70%;
 }
 
-.vpCcontainer button {
+.vpCcontainer a button {
     padding: 10px 20px;
     background-color: #0366d6;
     color: white;

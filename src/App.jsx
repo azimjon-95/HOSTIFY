@@ -8,8 +8,10 @@ import Footer from "./components/footer/Footer";
 function App() {
   const location = useLocation();  // Get current route
 
-  // Check if the current path matches the routes where you want to hide Navbar and Footer
-  const isAuthRoute = location.pathname.startsWith("/userAuth");
+  // Check if Navbar and Footer should be hidden
+  const isNavbarFooterHidden =
+    location.pathname.startsWith("/userAuth") || location.pathname.startsWith("/auth");
+
 
   return (
     <Suspense
@@ -21,7 +23,7 @@ function App() {
     >
       <div className="app">
         {/* Conditionally render Navbar and Footer */}
-        {!isAuthRoute && <Navbar />}
+        {!isNavbarFooterHidden && <Navbar />}
 
         <Routes>
           {routes.map(({ path, element, protected: isProtected }, index) => (
@@ -34,7 +36,7 @@ function App() {
         </Routes>
 
         {/* Conditionally render Footer */}
-        {!isAuthRoute && <Footer />}
+        {!isNavbarFooterHidden && <Footer />}
       </div>
     </Suspense>
   );

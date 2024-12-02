@@ -209,6 +209,12 @@
     color: #0033cc;
 }
 
+.card .price>svg {
+    color: #FFD700;
+    font-size: 22px;
+    margin-left: 4px;
+}
+
 .order-btn {
     background: linear-gradient(90deg, #0055A4 33.33%, #fff 33.33%, #fff 66.66%, #EF4135 66.66%);
     border: none;

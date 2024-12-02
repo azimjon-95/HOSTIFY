@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import cloud from '../../assets/memory/cloud-1.png'
 import hi_cpu from '../../assets/memory/hi-cpu-box.png'
 import memory from '../../assets/memory/memory-box.png'
@@ -27,7 +27,9 @@ const BannerVPS = () => {
             <div>
                 <h1>{banner.title}</h1>
                 <p>{banner.content}</p>
-                <button>Смотреть тарифы</button>
+                <Link to="/userAuth/new">
+                    <button>Смотреть тарифы</button>
+                </Link>
             </div>
             <div className="vpCcontainer-img">
                 <img

@@ -28,7 +28,7 @@ const Balance = () => {
 
     // Matnlar
     const headerText = currentLanguage === 'ru' ? 'Баланс и платежи' : 'Balance and Payments';
-    const balanceText = currentLanguage === 'ru' ? 'Баланс: $0.00' : 'Balance: $0.00';
+    const balanceText = currentLanguage === 'ru' ? 'Баланс: 0.00 BTC' : 'Balance: 0.00 BTC';
     const walletText = currentLanguage === 'ru' ? '💳' : '💳';
     const bonusSectionTitle = currentLanguage === 'ru' ? 'Бонус за пополнение баланса' : 'Bonus for top-up balance';
     const levelsText = currentLanguage === 'ru' ? 'Уровни' : 'Levels';
@@ -38,14 +38,20 @@ const Balance = () => {
     const amountText = currentLanguage === 'ru' ? 'Сумма' : 'Amount';
     const descriptionText = currentLanguage === 'ru' ? 'Описание' : 'Description';
 
+    // Define the USD to BTC conversion rate (example rate, this can be updated dynamically)
+    const USD_TO_BTC = 0.000025; // Example conversion rate, 1 USD = 0.000025 BTC
+
+    // Convert amounts to BTC
+    const convertToBTC = (usdAmount) => (usdAmount * USD_TO_BTC).toFixed(6); // Converts to BTC and rounds to 6 decimal places
+
     const paymentRows = currentLanguage === 'ru'
         ? [
-            { date: "2024-11-15", amount: "$50.00", description: "Пополнение" },
-            { date: "2024-11-10", amount: "$20.00", description: "Оплата услуги" }
+            { date: "2024-11-15", amount: convertToBTC(50), description: "Пополнение" },
+            { date: "2024-11-10", amount: convertToBTC(20), description: "Оплата услуги" }
         ]
         : [
-            { date: "2024-11-15", amount: "$50.00", description: "Top-up" },
-            { date: "2024-11-10", amount: "$20.00", description: "Service payment" }
+            { date: "2024-11-15", amount: convertToBTC(50), description: "Top-up" },
+            { date: "2024-11-10", amount: convertToBTC(20), description: "Service payment" }
         ];
 
     return (
@@ -81,17 +87,17 @@ const Balance = () => {
                             <h2>{bonusSectionTitle}</h2>
                             <p className="bonus-section-ur">{levelsText}</p>
                             <div className="cash-box">
-                                <p className="current-cash">$0 – $50</p>
+                                <p className="current-cash">{convertToBTC(0)} – {convertToBTC(50)}</p>
                                 <p className="current-cash percentage"> = </p>
                                 <p className="current-cash highlight">+0%</p>
                             </div>
                             <div className="cash-box">
-                                <p className="current-cash">$50 – $100</p>
+                                <p className="current-cash">{convertToBTC(50)} – {convertToBTC(100)}</p>
                                 <p className="current-cash percentage"> = </p>
                                 <p className="current-cash highlight">+5%</p>
                             </div>
                             <div className="cash-box">
-                                <p className="current-cash">$100 – ∞</p>
+                                <p className="current-cash">{convertToBTC(100)} – ∞</p>
                                 <p className="current-cash percentage"> = </p>
                                 <p className="current-cash highlight">+10%</p>
                             </div>
@@ -115,7 +121,7 @@ const Balance = () => {
                                 {paymentRows.map((row, index) => (
                                     <tr key={index}>
                                         <td>{row.date}</td>
-                                        <td>{row.amount}</td>
+                                        <td>{row.amount} BTC</td>
                                         <td>{row.description}</td>
                                     </tr>
                                 ))}

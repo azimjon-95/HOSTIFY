@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import Layout from "../Layout/Layout";
 import { GoPlus } from "react-icons/go";
+import { RiBtcFill } from "react-icons/ri";
 import img1 from "../../../../assets/memory/img1.png";
 import img2 from "../../../../assets/memory/img2.png";
 import img3 from "../../../../assets/memory/img3.png";
@@ -48,7 +49,7 @@ const translations = {
         serverTooltip: "Number of servers available for order right now",
     },
 };
-
+const USD_TO_BTC = 0.000059;
 const Tariff = () => {
     const currentLanguage = useSelector((state) => state.language.currentLanguage) || "en";
     const t = translations[currentLanguage];
@@ -92,6 +93,7 @@ const Tariff = () => {
     };
 
     const totalPrice = selectedTariff * serverCount;
+    const totalPriceInBTC = totalPrice * USD_TO_BTC;
     const [activeOption, setActiveOption] = useState(null);
 
     const handleOptionClick = (optionName) => {
@@ -171,7 +173,7 @@ const Tariff = () => {
                             <p>{t.standardDesc}</p>
                             <div className="mem-box-price">
                                 <p>{t.priceFrom}</p>
-                                <p>$3.00{t.perMonth}</p>
+                                <p style={{ display: "flex", alignItems: "center", gap: "5px" }}>{(3 * USD_TO_BTC).toFixed(6)}  <RiBtcFill className="RiBtcFill" />{t.perMonth}</p>
                             </div>
                         </div>
                         <div
@@ -185,7 +187,7 @@ const Tariff = () => {
                             <p>{t.memoryDesc}</p>
                             <div className="mem-box-price">
                                 <p>{t.priceFrom}</p>
-                                <p>$10.00{t.perMonth}</p>
+                                <p>{(10 * USD_TO_BTC).toFixed(6)}  <RiBtcFill className="RiBtcFill" />{t.perMonth}</p>
                             </div>
                         </div>
                     </div>
@@ -216,7 +218,7 @@ const Tariff = () => {
                             <Tooltip title={t.serverTooltip}>
                                 <p className="calc-server">{tariff.calc}</p>
                             </Tooltip>
-                            <h3>${tariff.price}</h3>
+                            <h3 style={{ display: "flex", alignItems: "center", gap: "5px" }}>{(tariff.price * USD_TO_BTC).toFixed(6)} <RiBtcFill className="RiBtcFill" /></h3>
                             <p>{tariff.cpu} vCPU</p>
                             <p>{tariff.ram} RAM</p>
                             <p>{tariff.ssd} SSD</p>
@@ -228,7 +230,7 @@ const Tariff = () => {
                 <div className="confirmation">
                     <p>{t.cost}</p>
                     <div>
-                        <p>${totalPrice.toFixed(2)}{t.perMonth}</p>
+                        <p style={{ display: "flex", alignItems: "center" }}>{totalPriceInBTC.toFixed(6)}  <RiBtcFill style={{ marginLeft: "10px" }} className="RiBtcFill" /></p>
                         <button className="create-button">{t.createButton}</button>
                     </div>
                 </div>
@@ -238,3 +240,8 @@ const Tariff = () => {
 };
 
 export default Tariff;
+
+
+
+
+

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ret from "../../assets/footer/inf-1-full-dark.svg";
 import { FaTelegram } from "react-icons/fa";
@@ -44,6 +44,15 @@ const Footer = () => {
 
   const t = translations[currentLanguage] || translations.en;
 
+  const location = useLocation();
+
+  // Yo'nalishni tekshirish
+  const isTrue =
+    location.pathname === "/case/standard" ||
+    location.pathname === "/case/memory" ||
+    location.pathname === "/case/windows" ||
+    location.pathname === "/case/hi-cpu";
+
   const handleRegisterClick = () => {
     window.scrollTo({
       top: window.scrollX + 0,
@@ -59,7 +68,10 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="footer">
+    <footer style={{
+      "--bg-color": isTrue ? "#0D1117" : "#F1F4FE",
+    }}
+      className="footer">
       <div className="footer-links">
         <div className="column">
           <img

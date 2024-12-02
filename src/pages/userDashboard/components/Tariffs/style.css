@@ -42,11 +42,11 @@
 
 .tariff-card h3 {
     color: #007fff;
-    font: 600 24px / 20px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
+    font: 600 18px / 20px Manrope, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Segoe UI", "Helvetica Neue", sans-serif;
     cursor: pointer;
     letter-spacing: normal;
     height: 30px;
-    border-bottom: 2px solid #007fff;
+    border-bottom: 1px solid #007fff;
 }
 
 .calc-server {
@@ -354,3 +354,68 @@
 }
 
 /* ====================================== */
+
+@media (max-width: 600px) {
+    .systems-tariffs {
+        display: flex;
+        gap: 10px;
+    }
+
+    .tariff-container {
+        padding: 10px;
+    }
+
+    .systems-tariff {
+        flex: 1 1 50%;
+        height: 320px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        padding: 10px 10px;
+        gap: 10px;
+        position: relative;
+    }
+
+    .system-t-img {
+        width: 130px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+
+    }
+
+    .mem-box-price {
+        width: 100%;
+        padding: 0 10px;
+        text-align: start;
+        position: absolute;
+        bottom: 3px;
+    }
+
+    .server-control-boc>p {
+        font: 300 18px / 32px Manrope, Roboto, sans-serif;
+        letter-spacing: normal;
+        margin: 0px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+    }
+
+    .server-control {
+        color: rgb(0, 0, 0);
+        font: 400 13px / 20px Manrope, Roboto, sans-serif;
+        letter-spacing: normal;
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+
+.RiBtcFill {
+    color: #FFD700;
+}

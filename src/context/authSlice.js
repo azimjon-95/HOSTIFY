@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    // isAuthenticated: true,  // Initialize with token check
-    isAuthenticated: !!localStorage.getItem("access_token"),  // Initialize with token check
+    isAuthenticated: true,  // Initialize with token check
+    // isAuthenticated: !!localStorage.getItem("access_token"),  // Initialize with token check
 };
 
 const authSlice = createSlice({

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import frs from '../../assets/frs.png'
-
+import { RiBtcFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
+import { FaBtc } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
-import { FaMicrochip, FaMemory, FaHdd, FaTachometerAlt, FaNetworkWired, FaMapMarkerAlt, FaDollarSign } from "react-icons/fa";
+import { FaMicrochip, FaMemory, FaHdd, FaTachometerAlt, FaNetworkWired, FaMapMarkerAlt } from "react-icons/fa";
 import { GrFormPrevious } from "react-icons/gr";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const translations = {
     en: {
@@ -69,28 +71,28 @@ export const PricingTable = () => {
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
     const texts = translations[currentLanguage];
     const plans = [
-        { id: "s-1-fr", cpu: "1 vCPU", ram: "1 GB RAM", disk: "10 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$3" },
-        { id: "s-2-fr", cpu: "2 vCPU", ram: "2 GB RAM", disk: "20 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$4" },
-        { id: "s-3-fr", cpu: "2 vCPU", ram: "4 GB RAM", disk: "40 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$6" },
-        { id: "s-4-fr", cpu: "4 vCPU", ram: "8 GB RAM", disk: "80 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$12" },
-        { id: "s-5-fr", cpu: "4 vCPU", ram: "16 GB RAM", disk: "160 GB SSD", speed: "200 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$20" },
-        { id: "s-6-fr", cpu: "6 vCPU", ram: "24 GB RAM", disk: "240 GB SSD", speed: "200 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$30" },
-        { id: "s-7-fr", cpu: "8 vCPU", ram: "32 GB RAM", disk: "320 GB SSD", speed: "300 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$40" },
-        { id: "s-8-fr", cpu: "12 vCPU", ram: "48 GB RAM", disk: "480 GB SSD", speed: "400 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$60" },
-        { id: "s-9-fr", cpu: "16 vCPU", ram: "64 GB RAM", disk: "640 GB SSD", speed: "500 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$80" },
-        { id: "s-10-fr", cpu: "24 vCPU", ram: "96 GB RAM", disk: "960 GB SSD", speed: "1 Gbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$120" },
+        { id: "s-1-fr", cpu: "1 vCPU", ram: "1 GB RAM", disk: "10 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00006000" },
+        { id: "s-2-fr", cpu: "2 vCPU", ram: "2 GB RAM", disk: "20 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00008000" },
+        { id: "s-3-fr", cpu: "2 vCPU", ram: "4 GB RAM", disk: "40 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00012000" },
+        { id: "s-4-fr", cpu: "4 vCPU", ram: "8 GB RAM", disk: "80 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00024000" },
+        { id: "s-5-fr", cpu: "4 vCPU", ram: "16 GB RAM", disk: "160 GB SSD", speed: "200 Mbps", location: "Parij, DC2Scale", price: "0.00040000" },
+        { id: "s-6-fr", cpu: "6 vCPU", ram: "24 GB RAM", disk: "240 GB SSD", speed: "200 Mbps", location: "Parij, DC2Scale", price: "0.00060000" },
+        { id: "s-7-fr", cpu: "8 vCPU", ram: "32 GB RAM", disk: "320 GB SSD", speed: "300 Mbps", location: "Parij, DC2Scale", price: "0.00080000" },
+        { id: "s-8-fr", cpu: "12 vCPU", ram: "48 GB RAM", disk: "480 GB SSD", speed: "400 Mbps", location: "Parij, DC2Scale", price: "0.00120000" },
+        { id: "s-9-fr", cpu: "16 vCPU", ram: "64 GB RAM", disk: "640 GB SSD", speed: "500 Mbps", location: "Parij, DC2Scale", price: "0.00160000" },
+        { id: "s-10-fr", cpu: "24 vCPU", ram: "96 GB RAM", disk: "960 GB SSD", speed: "1 Gbps", location: "Parij, DC2Scale", price: "0.00240000" }
     ];
     const memory = [
-        { id: "memory-1-fr", cpu: "1 vCPU", ram: "1 GB RAM", disk: "10 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$10" },
-        { id: "memory-2-fr", cpu: "2 vCPU", ram: "2 GB RAM", disk: "20 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$14" },
-        { id: "memory-3-fr", cpu: "2 vCPU", ram: "4 GB RAM", disk: "40 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$26" },
-        { id: "memory-4-fr", cpu: "4 vCPU", ram: "8 GB RAM", disk: "80 GB SSD", speed: "100 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$72" },
-        { id: "memory-5-fr", cpu: "4 vCPU", ram: "16 GB RAM", disk: "160 GB SSD", speed: "200 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$120" },
-        { id: "memory-6-fr", cpu: "6 vCPU", ram: "24 GB RAM", disk: "240 GB SSD", speed: "200 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$130" },
-        { id: "memory-7-fr", cpu: "8 vCPU", ram: "32 GB RAM", disk: "320 GB SSD", speed: "300 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$240" },
-        { id: "memory-8-fr", cpu: "12 vCPU", ram: "48 GB RAM", disk: "480 GB SSD", speed: "400 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$260" },
-        { id: "memory-9-fr", cpu: "16 vCPU", ram: "64 GB RAM", disk: "640 GB SSD", speed: "500 Mbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$380" },
-        { id: "memory-10-fr", cpu: "24 vCPU", ram: "96 GB RAM", disk: "960 GB SSD", speed: "1 Gbps", location: `${!currentLanguage ? "Париж" : "Parij"}, DC2Scale`, price: "$420" },
+        { id: "memory-1-fr", cpu: "1 vCPU", ram: "1 GB RAM", disk: "10 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00020000" },
+        { id: "memory-2-fr", cpu: "2 vCPU", ram: "2 GB RAM", disk: "20 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00028000" },
+        { id: "memory-3-fr", cpu: "2 vCPU", ram: "4 GB RAM", disk: "40 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00052000" },
+        { id: "memory-4-fr", cpu: "4 vCPU", ram: "8 GB RAM", disk: "80 GB SSD", speed: "100 Mbps", location: "Parij, DC2Scale", price: "0.00144000" },
+        { id: "memory-5-fr", cpu: "4 vCPU", ram: "16 GB RAM", disk: "160 GB SSD", speed: "200 Mbps", location: "Parij, DC2Scale", price: "0.00240000" },
+        { id: "memory-6-fr", cpu: "6 vCPU", ram: "24 GB RAM", disk: "240 GB SSD", speed: "200 Mbps", location: "Parij, DC2Scale", price: "0.00260000" },
+        { id: "memory-7-fr", cpu: "8 vCPU", ram: "32 GB RAM", disk: "320 GB SSD", speed: "300 Mbps", location: "Parij, DC2Scale", price: "0.00480000" },
+        { id: "memory-8-fr", cpu: "12 vCPU", ram: "48 GB RAM", disk: "480 GB SSD", speed: "400 Mbps", location: "Parij, DC2Scale", price: "0.00520000" },
+        { id: "memory-9-fr", cpu: "16 vCPU", ram: "64 GB RAM", disk: "640 GB SSD", speed: "500 Mbps", location: "Parij, DC2Scale", price: "0.00760000" },
+        { id: "memory-10-fr", cpu: "24 vCPU", ram: "96 GB RAM", disk: "960 GB SSD", speed: "1 Gbps", location: "Parij, DC2Scale", price: "0.00840000" },
     ];
 
 
@@ -163,6 +165,17 @@ export const PricingTable = () => {
         setStartIndex(0); // Reset index
     };
 
+
+
+    // Crypto narxini formatlovchi funksiya
+    const formatCryptoPrice = (price) => {
+        const numericPrice = parseFloat(price.replace(" BTC", ""));
+        return new Intl.NumberFormat("en-US", {
+            style: "decimal",
+            minimumFractionDigits: 8,
+            maximumFractionDigits: 8,
+        }).format(numericPrice);
+    };
     return (
 
 
@@ -191,7 +204,7 @@ export const PricingTable = () => {
                         <li>{texts.disk}<FaHdd /></li>
                         <li>{texts.connection}<FaTachometerAlt /></li>
                         <li>{texts.location}<FaMapMarkerAlt /></li>
-                        <li>{texts.price}<FaDollarSign /></li>
+                        <li>{texts.price}<FaBtc /></li>
                         <li>{texts.order}<FaNetworkWired /></li>
                     </ul>
                 </div>
@@ -213,9 +226,11 @@ export const PricingTable = () => {
                                     <p>{plan.disk}</p>
                                     <p>{plan.speed}</p>
                                     <p>{plan.location}</p>
-                                    <p className="price">{plan.price}</p>
+                                    <p className="price">{formatCryptoPrice(plan.price)} <RiBtcFill /></p>
                                     <p>
-                                        <button className="order-btn">{texts.order}</button>
+                                        <Link to="/userAuth/new">
+                                            <button className="order-btn">{texts.order}</button>
+                                        </Link>
                                     </p>
                                 </div>
                             </div>
